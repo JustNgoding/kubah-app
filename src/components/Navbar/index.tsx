@@ -14,7 +14,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="w-full bg-primary px-20 py-8  top-0">
+    <nav className="w-full bg-primary fixed top-0 z-40 px-20 py-8 ">
       <div className="w-full flex justify-between items-center">
         <div>
           <h1 className="text-secondary text-2xl font-bold">Dome.id</h1>
