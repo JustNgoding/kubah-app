@@ -8,19 +8,19 @@ const Home = () => {
   return (
     <>
       <div className="bg-gray-50 pt-20">
-        <section>
+        <section id="home" className="scroll-mt-28">
           <WelcomePage />
         </section>
-        <section>
+        <section className="scroll-mt-28">
           <BenefitPage />
         </section>
-        <section>
+        <section id="tentang-kami" className="scroll-mt-28">
           <AboutPage />
         </section>
-        <section>
+        <section id="project-kami" className="scroll-mt-28">
           <PortofolioPage />
         </section>
-        <section>
+        <section id="kontak-kami" className="scroll-mt-28">
           <ContactPage />
         </section>
       </div>

@@ -2,60 +2,52 @@ const PortofolioPage = () => {
   const portfolioImages = [
     {
       id: 1,
-      image:
-        "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&h=600&fit=crop",
+      image: "./assets/images/portfolio/portfolio1.jpeg",
       span: "md:col-span-2 md:row-span-2",
     },
     {
       id: 2,
-      image:
-        "https://images.unsplash.com/photo-1577720643272-265f434880b3?w=400&h=400&fit=crop",
+      image: "./assets/images/portfolio/portfolio2.jpeg",
       span: "md:col-span-1",
     },
     {
       id: 3,
-      image:
-        "https://images.unsplash.com/photo-1578926314433-f06522ff265f?w=400&h=400&fit=crop",
+      image: "./assets/images/portfolio/portfolio3.jpeg",
       span: "md:col-span-1",
     },
     {
       id: 4,
-      image:
-        "https://images.unsplash.com/photo-1573506313671-a8e61fec67e5?w=400&h=400&fit=crop",
+      image: "./assets/images/portfolio/portfolio4.jpeg",
       span: "md:col-span-1",
     },
     {
       id: 5,
-      image:
-        "https://images.unsplash.com/photo-1577720643272-265f434880b3?w=600&h=600&fit=crop",
-      span: "md:col-span-2",
+      image: "./assets/images/portfolio/portfolio5.jpeg",
+      span: "md:col-span-1",
     },
     {
       id: 6,
-      image:
-        "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=400&h=400&fit=crop",
+      image: "./assets/images/portfolio/portfolio6.jpeg",
       span: "md:col-span-1",
     },
     {
       id: 7,
-      image:
-        "https://images.unsplash.com/photo-1578926314433-f06522ff265f?w=400&h=400&fit=crop",
+      image: "./assets/images/portfolio/portfolio7.jpeg",
       span: "md:col-span-1",
     },
     {
       id: 8,
-      image:
-        "https://images.unsplash.com/photo-1573506313671-a8e61fec67e5?w=600&h=600&fit=crop",
+      image: "./assets/images/portfolio/portfolio8.jpeg",
       span: "md:col-span-2 md:row-span-2",
     },
   ];
 
   return (
     <section className="py-12 md:py-20 bg-white min-h-screen">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
-            Portfolio Kami
+            Project Kami
           </h2>
           <p className="text-gray-600 text-lg">
             Koleksi proyek kubah masjid terbaik kami di seluruh Indonesia

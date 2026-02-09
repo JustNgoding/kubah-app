@@ -26,7 +26,7 @@ const BenefitPage = () => {
   ];
 
   return (
-    <div className="px-10 py-20 bg-gray-50 ">
+    <div className="px-6 md:px-12 py-12 md:py-24 bg-gray-50 ">
       <h2 className="text-center text-3xl font-bold mb-10 text-gray-800">
         Keuntungan Kami
       </h2>

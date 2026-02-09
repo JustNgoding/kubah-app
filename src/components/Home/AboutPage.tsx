@@ -1,7 +1,7 @@
 const AboutPage = () => {
   return (
-    <div className="p-8 md:p-16 bg-secondary ">
-      <div className="max-w-7xl mx-auto  p-8 md:p-12">
+    <div className="  bg-secondary ">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-24 ">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
           Apa itu Dome Indonesia?
         </h2>

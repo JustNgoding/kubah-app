@@ -54,8 +54,8 @@ const ContactPage = () => {
   ];
 
   return (
-    <section className="py-12 md:py-20 bg-gradient-to-b from-gray-50 to-white min-h-screen">
-      <div className="max-w-6xl mx-auto px-4">
+    <section className="py-12 md:py-20 from-gray-50 to-white min-h-screen">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-24">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
             Hubungi Kami
@@ -76,29 +76,26 @@ const ContactPage = () => {
                   className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow"
                 >
                   <div className="flex items-start gap-4">
-                    <Icon className="text-indigo-600 text-2xl flex-shrink-0 mt-1" />
+                    <Icon className="text-primary text-2xl  mt-1" />
                     <div>
                       <h3 className="text-lg font-bold text-gray-900 mb-2">
                         {info.title}
                       </h3>
                       {info.content.map((text, i) => (
-                        <p
-                          key={i}
-                          className="text-gray-600 text-sm mb-1 break-words"
-                        >
+                        <p key={i} className="text-gray-600 text-sm mb-1">
                           {info.title === "Website" ? (
                             <a
                               href={text}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-indigo-600 hover:underline"
+                              className="text-primary hover:underline"
                             >
                               {text}
                             </a>
                           ) : info.title === "Email" ? (
                             <a
                               href={`mailto:${text}`}
-                              className="text-indigo-600 hover:underline"
+                              className="text-primary hover:underline"
                             >
                               {text}
                             </a>
@@ -119,7 +116,10 @@ const ContactPage = () => {
             <h3 className="text-2xl font-bold text-gray-900 mb-6">
               Kirim Pesan
             </h3>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-4 space-y-4"
+            >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input
                   type="text"
@@ -128,7 +128,7 @@ const ContactPage = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 transition"
+                  className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition"
                 />
                 <input
                   type="email"
@@ -137,7 +137,7 @@ const ContactPage = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 transition"
+                  className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition"
                 />
               </div>
 
@@ -148,7 +148,7 @@ const ContactPage = () => {
                 value={formData.subject}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 transition"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition"
               />
 
               <textarea
@@ -158,12 +158,12 @@ const ContactPage = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-600 transition resize-none"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition resize-none"
               />
 
               <button
                 type="submit"
-                className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-200"
+                className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 px-4 rounded-lg transition-colors duration-200"
               >
                 Kirim Pesan
               </button>
