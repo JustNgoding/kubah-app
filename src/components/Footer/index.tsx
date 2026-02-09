@@ -1,11 +1,4 @@
-import {
-  FiPhone,
-  FiMail,
-  FiMapPin,
-  FiFacebook,
-  FiInstagram,
-  FiLinkedin,
-} from "react-icons/fi";
+import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -29,29 +22,18 @@ const Footer = () => {
         { label: "Maintenance", href: "#" },
       ],
     },
-    {
-      title: "Informasi",
-      links: [
-        { label: "Blog", href: "#" },
-        { label: "FAQ", href: "#" },
-        { label: "Kebijakan Privasi", href: "#" },
-        { label: "Syarat & Ketentuan", href: "#" },
-      ],
-    },
   ];
 
-  const socialLinks = [
-    { icon: FiFacebook, href: "#", label: "Facebook" },
-    { icon: FiInstagram, href: "#", label: "Instagram" },
-    { icon: FiLinkedin, href: "#", label: "LinkedIn" },
-  ];
+  // const socialLinks = [
+  //   { icon: FiFacebook, href: "#", label: "Facebook" },
+  //   { icon: FiInstagram, href: "#", label: "Instagram" },
+  //   { icon: FiLinkedin, href: "#", label: "LinkedIn" },
+  // ];
 
   return (
     <footer className="bg-gray-900 text-gray-300">
-      {/* Main Footer Content */}
-      <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
-          {/* Company Info */}
+      <div className="max-w-7xl mx-auto px-4 py-12 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div className="lg:col-span-1">
             <h3 className="text-white text-lg font-bold mb-4">
               Dome Indonesia
@@ -60,7 +42,7 @@ const Footer = () => {
               Perusahaan terpercaya dalam desain, produksi, dan pemasangan kubah
               masjid berkualitas tinggi di Indonesia.
             </p>
-            <div className="flex gap-4">
+            {/* <div className="flex gap-4">
               {socialLinks.map((social, index) => {
                 const Icon = social.icon;
                 return (
@@ -74,10 +56,9 @@ const Footer = () => {
                   </a>
                 );
               })}
-            </div>
+            </div> */}
           </div>
 
-          {/* Footer Sections */}
           {footerSections.map((section, index) => (
             <div key={index}>
               <h4 className="text-white font-semibold mb-4">{section.title}</h4>
@@ -96,7 +77,6 @@ const Footer = () => {
             </div>
           ))}
 
-          {/* Contact Info */}
           <div>
             <h4 className="text-white font-semibold mb-4">Hubungi Kami</h4>
             <div className="space-y-3 text-sm">
@@ -132,32 +112,11 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Divider */}
         <div className="border-t border-gray-700 pt-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
             <p className="text-sm text-gray-400">
               © {currentYear} Dome Indonesia. Semua hak dilindungi.
             </p>
-            <div className="flex justify-start md:justify-end gap-4 text-sm">
-              <a
-                href="#"
-                className="text-gray-400 hover:text-indigo-500 transition-colors"
-              >
-                Privasi
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-indigo-500 transition-colors"
-              >
-                Syarat
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-indigo-500 transition-colors"
-              >
-                Sitemap
-              </a>
-            </div>
           </div>
         </div>
       </div>
