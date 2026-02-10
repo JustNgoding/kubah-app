@@ -1,55 +1,70 @@
-import { HiCube, HiOutlineCube, HiOutlineViewGrid } from "react-icons/hi";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+type DomeItem = {
+  title: string;
+  description: string;
+  image: string;
+};
 
 const DomeShape = () => {
-  const data = [
+  const data: DomeItem[] = [
     {
       title: "Kubah Setengah Bola",
-      desc: "Bentuk paling umum, simetris, dan kuat secara struktur.",
-      icon: HiCube,
+      description: "Bentuk paling umum, simetris, dan kuat secara struktur.",
+      image: "HiCube",
     },
     {
       title: "Kubah Oval",
-      desc: "Memberi kesan elegan dan modern, sering dipakai desain kontemporer.",
-      icon: HiOutlineCube,
+      description:
+        "Memberi kesan elegan dan modern, sering dipakai desain kontemporer.",
+      image: "HiOutlineCube",
     },
     {
       title: "Kubah Bertingkat",
-      desc: "Memiliki beberapa layer, terlihat megah dan klasik.",
-      icon: HiOutlineViewGrid,
+      description: "Memiliki beberapa layer, terlihat megah dan klasik.",
+      image: "HiOutlineViewGrid",
     },
   ];
 
   return (
     <>
       <Navbar />
-      <section className="min-h-screen bg-white px-6 py-24 md:px-20">
-        <div className="mx-auto max-w-6xl">
-          <h1 className="mb-4 text-3xl font-bold text-primary">Bentuk Kubah</h1>
-          <p className="mb-12 max-w-2xl text-gray-600">
+      <main className="pt-32 pb-20 px-4 md:px-20 bg-gray-50">
+        <section className="max-w-7xl mx-auto">
+          <h1 className="text-3xl md:text-4xl font-bold text-start mb-4">
+            Bentuk Kubah
+          </h1>
+
+          <p className="text-start text-gray-600 max-w-2xl mb-12">
             Berikut beberapa bentuk kubah yang umum digunakan pada masjid dan
             bangunan religius, disesuaikan dengan kebutuhan estetika dan
             struktur.
           </p>
 
-          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-            {data.map((item, i) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={i}
-                  className="rounded-lg border p-6 transition hover:shadow-lg"
-                >
-                  <Icon className="mb-4 text-4xl text-primary" />
-                  <h3 className="mb-2 text-lg font-semibold">{item.title}</h3>
-                  <p className="text-sm text-gray-600">{item.desc}</p>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {data.map((item) => (
+              <div
+                key={item.title}
+                className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden"
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="h-56 w-full object-cover"
+                />
+
+                <div className="p-5">
+                  <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
+
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
       <Footer />
     </>
   );

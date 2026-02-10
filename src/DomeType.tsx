@@ -9,34 +9,28 @@ type DomeItem = {
 
 const domeList: DomeItem[] = [
   {
-    title: "Kubah Bawang",
+    title: "Kubah Panel Enamel Teflon",
     description:
-      "Kubah klasik dengan bentuk menyerupai bawang. Umum digunakan pada masjid tradisional dan masjid bergaya Timur Tengah.",
-    image: "/images/kubah-bawang.jpg",
+      "Bahan terbuat dari plat baja SPCC dengan Finishing Teflon di oven pada suhu 800°C. tahan goncangan, mampu bertahan di suhu tinggi dan warna catnya mampu bertahan lebih dari 20 tahun.",
+    image: "./assets/images/dome-type/kubah-bawang.jpg",
   },
   {
-    title: "Kubah Oval",
+    title: "Kubah Panel Enamel Galvalume",
     description:
-      "Bentuk kubah lonjong modern yang memberi kesan elegan dan ringan, cocok untuk masjid kontemporer.",
-    image: "/images/kubah-oval.jpg",
+      "Bahan dasar baja ringan dilapisi aluminium, silikon & seng. Kelebihannya adalah tahan terhadap panas,Tahan korosi atau karat dan bisa menetralkan cuaca panas.",
+    image: "./assets/images/dome-type/kubah-oval.jpg",
   },
   {
-    title: "Kubah Setengah Bola",
+    title: "Kubah Panel GRC",
     description:
-      "Desain paling umum dan stabil secara struktur. Banyak dipakai karena mudah dikombinasikan dengan berbagai gaya bangunan.",
-    image: "/images/kubah-setengah-bola.jpg",
+      "GRC (Glassfibre Reinforced Concrete) Cement) berbahan dasar beton dan serat-serat fiberglass kemudian di campur dengan bahan penguat lainnya.Selain ringan, juga memiliki tekstur yang lunak.",
+    image: "./assets/images/dome-type/kubah-setengah-bola.jpg",
   },
   {
-    title: "Kubah Limas",
+    title: "Kubah Panel Stainless Gold",
     description:
-      "Bentuk geometris dengan sudut tegas. Biasanya digunakan pada masjid bergaya lokal atau modern minimalis.",
-    image: "/images/kubah-limas.jpg",
-  },
-  {
-    title: "Kubah Custom",
-    description:
-      "Kubah dengan desain khusus sesuai permintaan klien, baik dari segi bentuk, ukuran, maupun ornamen.",
-    image: "/images/kubah-custom.jpg",
+      "Bahan mengandung senyawa besi dan setidaknya 12% kromium yang membuatnya tahan terhadap karat dan korosi. Finishing warna emas memberikan tampilan mewah dan elegan.",
+    image: "./assets/images/dome-type/kubah-limas.jpg",
   },
 ];
 
