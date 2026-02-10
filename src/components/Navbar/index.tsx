@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink, useLocation, useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import type { IconType } from "react-icons";
 import {
   HiMenuAlt3,
@@ -12,7 +12,7 @@ import {
   HiSparkles,
   HiFolderOpen,
   HiMail,
-  HiChevronDown,
+  // HiChevronDown,
 } from "react-icons/hi";
 
 type NavItem = {
@@ -24,7 +24,7 @@ type NavItem = {
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeHash, setActiveHash] = useState("#home");
-  const [productOpen, setProductOpen] = useState(false);
+  // const [productOpen, setProductOpen] = useState(false);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -32,16 +32,20 @@ const Navbar: React.FC = () => {
   const mainNav: NavItem[] = [
     { label: "Home", path: "/", icon: HiHome },
     { label: "Tentang Kami", path: "#tentang-kami", icon: HiInformationCircle },
+    { label: "Jenis Kubah", path: "#jenis-kubah", icon: HiCollection },
+    { label: "Bentuk Kubah", path: "#bentuk-kubah", icon: HiCube },
+    { label: "Desain Kubah", path: "#desain-kubah", icon: HiPencil },
+    { label: "Motif Plafon", path: "#motif-plafon", icon: HiSparkles },
     { label: "Project Kami", path: "#project-kami", icon: HiFolderOpen },
     { label: "Kontak Kami", path: "#kontak-kami", icon: HiMail },
   ];
 
-  const productNav: NavItem[] = [
-    { label: "Jenis Kubah", path: "/dome-type", icon: HiCollection },
-    { label: "Bentuk Kubah", path: "/dome-shape", icon: HiCube },
-    { label: "Desain Kubah", path: "/dome-design", icon: HiPencil },
-    { label: "Motif Plafon", path: "/celling-motif", icon: HiSparkles },
-  ];
+  // const productNav: NavItem[] = [
+  //   { label: "Jenis Kubah", path: "/dome-type", icon: HiCollection },
+  //   { label: "Bentuk Kubah", path: "/dome-shape", icon: HiCube },
+  //   { label: "Desain Kubah", path: "/dome-design", icon: HiPencil },
+  //   { label: "Motif Plafon", path: "/celling-motif", icon: HiSparkles },
+  // ];
 
   const isHomeActive = location.pathname === "/" && activeHash === "#home";
 
@@ -62,7 +66,6 @@ const Navbar: React.FC = () => {
       <div className="mx-auto flex max-w-7xl items-center justify-between">
         <h1 className="text-xl font-bold text-secondary">Dome.id</h1>
 
-        {/* DESKTOP */}
         <ul className="hidden items-center gap-6 font-semibold text-white lg:flex">
           {mainNav.map((item) => {
             if (item.path === "/") {
@@ -96,7 +99,7 @@ const Navbar: React.FC = () => {
           })}
 
           {/* PRODUCTS DROPDOWN */}
-          <li className="relative">
+          {/* <li className="relative">
             <button
               onClick={() => setProductOpen((p) => !p)}
               className="flex items-center gap-2"
@@ -134,10 +137,9 @@ const Navbar: React.FC = () => {
                 );
               })}
             </ul>
-          </li>
+          </li> */}
         </ul>
 
-        {/* MOBILE BUTTON */}
         <button
           className="text-2xl text-white lg:hidden"
           onClick={() => setIsOpen((p) => !p)}
@@ -146,7 +148,6 @@ const Navbar: React.FC = () => {
         </button>
       </div>
 
-      {/* MOBILE MENU */}
       <div
         className={`lg:hidden overflow-hidden transition-all duration-300 ${
           isOpen ? " opacity-100" : "max-h-0 opacity-0"
@@ -186,8 +187,7 @@ const Navbar: React.FC = () => {
             );
           })}
 
-          {/* MOBILE PRODUCTS */}
-          <div>
+          {/* <div>
             <button
               onClick={() => setProductOpen((p) => !p)}
               className="flex items-center gap-2"
@@ -228,7 +228,7 @@ const Navbar: React.FC = () => {
                 );
               })}
             </ul>
-          </div>
+          </div> */}
         </ul>
       </div>
     </nav>

@@ -16,16 +16,19 @@ const WelcomePage = () => {
             <button className="px-8 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-blue-700 transition">
               Jelajahi Produk
             </button>
-            <button className="px-8 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-blue-50 transition">
+            <a
+              href="#kontak-kami"
+              className="px-8 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-blue-50 transition"
+            >
               Hubungi Kami
-            </button>
+            </a>
           </div>
         </div>
 
         <div className="w-full md:w-1/2 order-1 md:order-2 flex justify-center">
           <div className="w-full max-w-md">
             <img
-              src="./assets/images/banner/banner1.jpeg"
+              src="./assets/images/banner/banner2.jpeg"
               alt="Banner Kubah"
               className="w-full h-auto rounded-lg shadow-lg object-cover"
             />

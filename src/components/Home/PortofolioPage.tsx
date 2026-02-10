@@ -38,13 +38,13 @@ const PortofolioPage = () => {
     {
       id: 8,
       image: "./assets/images/portfolio/portfolio8.jpeg",
-      span: "md:col-span-2 md:row-span-2",
+      span: "md:col-span-2 md:row-span-1",
     },
   ];
 
   return (
-    <section className="py-12 md:py-20 bg-white min-h-screen">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-24">
+    <section className="py-12 md:py-20 bg-gray-50 min-h-screen">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 ">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
             Project Kami

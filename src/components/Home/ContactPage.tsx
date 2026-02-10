@@ -1,5 +1,6 @@
-import { FiPhone, FiMail, FiMapPin, FiGlobe } from "react-icons/fi";
+import { FiMail, FiMapPin, FiGlobe } from "react-icons/fi";
 import { useState } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -29,9 +30,9 @@ const ContactPage = () => {
 
   const contactInfo = [
     {
-      icon: FiPhone,
-      title: "Telepon",
-      content: ["0851 1760 5188", "0851 1760 5187"],
+      icon: FaWhatsapp,
+      title: "Whatsapp",
+      content: ["0851 1760 5188"],
     },
     {
       icon: FiMail,
@@ -54,8 +55,8 @@ const ContactPage = () => {
   ];
 
   return (
-    <section className="py-12 md:py-20 from-gray-50 to-white min-h-screen">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-24">
+    <section className="py-12 md:py-20 bg-secondary min-h-screen">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 ">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
             Hubungi Kami
@@ -66,7 +67,6 @@ const ContactPage = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Contact Information */}
           <div className="lg:col-span-1 space-y-6">
             {contactInfo.map((info, index) => {
               const Icon = info.icon;
@@ -111,7 +111,6 @@ const ContactPage = () => {
             })}
           </div>
 
-          {/* Contact Form */}
           <div className="lg:col-span-2 bg-white rounded-xl shadow-lg p-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">
               Kirim Pesan

@@ -1,6 +1,11 @@
+import Floatingwa from "../Floatingwa";
 import AboutPage from "./AboutPage";
 import BenefitPage from "./BenefitPage";
+import CellingMotif from "./CellingMotif";
 import ContactPage from "./ContactPage";
+import DomeDesign from "./DomeDesign";
+import DomeShape from "./DomeShape";
+import DomeType from "./DomeType";
 import PortofolioPage from "./PortofolioPage";
 import WelcomePage from "./WelcomePage";
 
@@ -17,6 +22,18 @@ const Home = () => {
         <section id="tentang-kami" className="scroll-mt-28">
           <AboutPage />
         </section>
+        <section id="jenis-kubah" className="scroll-mt-28">
+          <DomeType />
+        </section>
+        <section id="bentuk-kubah" className="scroll-mt-28">
+          <DomeShape />
+        </section>
+        <section id="desain-kubah" className="scroll-mt-28">
+          <DomeDesign />
+        </section>
+        <section id="motif-plafon" className="scroll-mt-28">
+          <CellingMotif />
+        </section>
         <section id="project-kami" className="scroll-mt-28">
           <PortofolioPage />
         </section>
@@ -24,6 +41,8 @@ const Home = () => {
           <ContactPage />
         </section>
       </div>
+
+      <Floatingwa />
     </>
   );
 };
