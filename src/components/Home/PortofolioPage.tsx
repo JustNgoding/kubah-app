@@ -50,7 +50,7 @@ const PortofolioPage = () => {
             Project Kami
           </h2>
           <p className="text-gray-600 text-lg">
-            Koleksi proyek kubah masjid terbaik kami di seluruh Indonesia
+            Koleksi proyek sukses kubah masjid terbaik kami
           </p>
         </div>
 

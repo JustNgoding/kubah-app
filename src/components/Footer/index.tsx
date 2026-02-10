@@ -50,7 +50,7 @@ const Footer = () => {
                     key={index}
                     href={social.href}
                     aria-label={social.label}
-                    className="text-gray-400 hover:text-indigo-500 transition-colors text-xl"
+                    className="text-gray-400 hover:text-primary transition-colors text-xl"
                   >
                     <Icon />
                   </a>
@@ -67,7 +67,7 @@ const Footer = () => {
                   <li key={i}>
                     <a
                       href={link.href}
-                      className="text-sm hover:text-indigo-500 transition-colors"
+                      className="text-sm hover:text-primary transition-colors"
                     >
                       {link.label}
                     </a>
@@ -81,27 +81,27 @@ const Footer = () => {
             <h4 className="text-white font-semibold mb-4">Hubungi Kami</h4>
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-2">
-                <FiPhone className=" mt-1 text-indigo-500" />
+                <FiPhone className=" mt-1 text-primary" />
                 <div>
                   <a
                     href="tel:085117605188"
-                    className="hover:text-indigo-500 transition-colors"
+                    className="hover:text-primary transition-colors"
                   >
                     0851 1760 5188
                   </a>
                 </div>
               </div>
               <div className="flex items-start gap-2">
-                <FiMail className=" mt-1 text-indigo-500" />
+                <FiMail className=" mt-1 text-primary" />
                 <a
                   href="mailto:domeindonesia@gmail.com"
-                  className="hover:text-indigo-500 transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   domeindonesia@gmail.com
                 </a>
               </div>
               <div className="flex items-start gap-2">
-                <FiMapPin className=" mt-1 text-indigo-500" />
+                <FiMapPin className=" mt-1 text-primary" />
                 <p>
                   Jl. Raya Suruh-Karangan
                   <br />
