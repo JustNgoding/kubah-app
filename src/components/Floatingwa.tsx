@@ -1,7 +1,7 @@
 import { FaWhatsapp } from "react-icons/fa";
 
 const Floatingwa = () => {
-  const phoneNumber = "6281234567890"; // ganti ke nomor WA kamu
+  const phoneNumber = "6285117605188"; // ganti ke nomor WA kamu
   const message = "Halo, saya ingin konsultasi tentang kubah masjid";
 
   return (

@@ -27,7 +27,7 @@ const domeList: DomeItem[] = [
     title: "Kubah Panel Stainless Gold",
     description:
       "Bahan mengandung senyawa besi dan setidaknya 12% kromium yang membuatnya tahan terhadap karat dan korosi. Finishing warna emas memberikan tampilan mewah dan elegan.",
-    image: "./assets/images/dome-type/type4.png",
+    image: "./assets/images/dome-type/type4.jpg",
   },
 ];
 

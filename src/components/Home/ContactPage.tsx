@@ -22,10 +22,22 @@ const ContactPage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-    // Reset form
-    setFormData({ name: "", email: "", subject: "", message: "" });
+
+    const { name, email, subject, message } = formData;
+
+    const mailSubject = encodeURIComponent(subject);
+    const mailBody = encodeURIComponent(
+      `Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`,
+    );
+
+    window.location.href = `mailto:domeindonesia@gmail.com?subject=${mailSubject}&body=${mailBody}`;
+
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
   };
 
   const contactInfo = [
@@ -55,7 +67,7 @@ const ContactPage = () => {
   ];
 
   return (
-    <section className="py-12 md:py-20 bg-secondary min-h-screen">
+    <section className="py-12 md:py-20 bg-white min-h-screen">
       <div className="max-w-7xl mx-auto px-6 md:px-12 ">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
@@ -83,7 +95,16 @@ const ContactPage = () => {
                       </h3>
                       {info.content.map((text, i) => (
                         <p key={i} className="text-gray-600 text-sm mb-1">
-                          {info.title === "Website" ? (
+                          {info.title === "Whatsapp" ? (
+                            <a
+                              href={`https://wa.me/6285117605188?text=${encodeURIComponent("Halo, saya ingin konsultasi tentang kubah masjid")}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-primary hover:underline"
+                            >
+                              {text}
+                            </a>
+                          ) : info.title === "Website" ? (
                             <a
                               href={text}
                               target="_blank"
@@ -162,7 +183,7 @@ const ContactPage = () => {
 
               <button
                 type="submit"
-                className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 px-4 rounded-lg transition-colors duration-200"
+                className="w-full bg-primary text-white rounded-lg font-semibold hover:bg-primary/20 hover:text-primary hover:border-2 cursor-pointer  py-4 transition-colors duration-200"
               >
                 Kirim Pesan
               </button>

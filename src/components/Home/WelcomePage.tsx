@@ -13,7 +13,7 @@ const WelcomePage = () => {
             Anda dengan produk unggulan kami.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="px-8 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-blue-700 transition">
+            <button className="px-8 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/20 hover:text-primary hover:border-2 cursor-pointer  transition">
               Jelajahi Produk
             </button>
             <a

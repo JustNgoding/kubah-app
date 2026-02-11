@@ -3,7 +3,7 @@ import AboutPage from "./AboutPage";
 import BenefitPage from "./BenefitPage";
 import CellingMotif from "./CellingMotif";
 import ContactPage from "./ContactPage";
-import DomeDesign from "./DomeDesign";
+// import DomeDesign from "./DomeDesign";
 import DomeShape from "./DomeShape";
 import DomeType from "./DomeType";
 import PortofolioPage from "./PortofolioPage";
@@ -28,9 +28,9 @@ const Home = () => {
         <section id="bentuk-kubah" className="scroll-mt-28">
           <DomeShape />
         </section>
-        <section id="desain-kubah" className="scroll-mt-28">
+        {/* <section id="desain-kubah" className="scroll-mt-28">
           <DomeDesign />
-        </section>
+        </section> */}
         <section id="motif-plafon" className="scroll-mt-28">
           <CellingMotif />
         </section>

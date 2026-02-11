@@ -7,20 +7,28 @@ type DomeItem = {
 const DomeShape = () => {
   const data: DomeItem[] = [
     {
-      title: "Kubah Setengah Bola",
-      description: "Bentuk paling umum, simetris, dan kuat secara struktur.",
-      image: "HiCube",
-    },
-    {
-      title: "Kubah Oval",
+      title: "Kubah Madina",
       description:
-        "Memberi kesan elegan dan modern, sering dipakai desain kontemporer.",
-      image: "HiOutlineCube",
+        "Kubah madinah juga sering disebut dengan kubah oval karena bentuknya tidak setengah lingkaran tapi cenderung oval.",
+      image: "./assets/images/dome-shape/shape1.jpg",
     },
     {
-      title: "Kubah Bertingkat",
-      description: "Memiliki beberapa layer, terlihat megah dan klasik.",
-      image: "HiOutlineViewGrid",
+      title: "Kubah Bawang",
+      description:
+        "Bentuk seperti bawang. Kubah bawang sering ditemukandi India dan negara-negara di kawasan Asia Tengah",
+      image: "./assets/images/dome-shape/shape2.jpg",
+    },
+    {
+      title: "Kubah Setengah Bola",
+      description:
+        "Kubah setengah bola memiliki bentuk yang estetis dan elegan dengan perakitanyang relatif mudah.",
+      image: "./assets/images/dome-shape/shape3.jpg",
+    },
+    {
+      title: "Kubah Pinang",
+      description:
+        "Dinamakan pinang karena mengacu pada bentuk batang pohon pinang, yaitu tirus dan menggembung di bagian sisi lingkar luarnya. Modelnya tirus dan tinggi.",
+      image: "./assets/images/dome-shape/shape4.jpg",
     },
   ];
 
@@ -39,26 +47,30 @@ const DomeShape = () => {
           </p>
 
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {data.map((item) => (
-              <div
-                key={item.title}
-                className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden"
-              >
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="h-56 w-full object-cover"
-                />
+            {data.map((item, index) => {
+              const isLast = index === data.length - 1 && data.length % 3 === 1;
 
-                <div className="p-5">
-                  <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
+              return (
+                <div
+                  key={item.title}
+                  className={`bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden
+        ${isLast ? "lg:col-span-3 lg:max-w-sm lg:mx-auto" : ""}`}
+                >
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="h-56 w-full object-cover"
+                  />
 
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {item.description}
-                  </p>
+                  <div className="p-5">
+                    <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
