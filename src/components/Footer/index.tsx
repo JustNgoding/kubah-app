@@ -5,6 +5,7 @@ const Footer = () => {
 
   const navMain = [
     { label: "Home", href: "/" },
+    { label: "Produk", href: "#produk" },
     { label: "Tentang Kami", href: "#tentang-kami" },
     { label: "Project Kami", href: "#project-kami" },
     { label: "Kontak", href: "#kontak-kami" },
@@ -20,7 +21,6 @@ const Footer = () => {
     <footer className="bg-gray-900 text-gray-300">
       <div className="max-w-7xl mx-auto px-6 py-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-          {/* BRAND */}
           <div>
             <h3 className="text-white text-xl font-bold mb-4">
               Dome Indonesia
@@ -31,7 +31,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* NAVIGASI */}
           <div>
             <h4 className="text-white font-semibold mb-4">Navigasi</h4>
             <ul className="space-y-2">
@@ -48,7 +47,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* PRODUK */}
           <div>
             <h4 className="text-white font-semibold mb-4">Produk</h4>
             <ul className="space-y-2">
@@ -65,7 +63,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* KONTAK */}
           <div>
             <h4 className="text-white font-semibold mb-4">Hubungi Kami</h4>
 
