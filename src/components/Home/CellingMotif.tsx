@@ -6,11 +6,11 @@ const CellingMotif = () => {
       <div className="max-w-7xl mx-auto px-4 md:px-12">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold">
-            Motif Plafon Masjid
+            Contoh Plafon dan Kaligrafi
           </h2>
 
           <p className="text-gray-600 text-base md:text-lg mt-4">
-            Koleksi lengkap motif plafon masjid yang kami tawarkan untuk menambah estetika interior.
+            Berikut adalah contoh plafon dan kaligrafi yang telah kami tawarkan.
           </p>
         </div>
 
