@@ -17,25 +17,25 @@ const products = [
   },
   {
     image: "./assets/images/dome-type/type3.png",
-    title: "Kubah Stainless Steel",
+    title: "Kubah GRC",
     description:
-      "Memberikan kilau yang elegan dan ketahanan luar biasa terhadap karat, cocok untuk daerah pesisir.",
+      "Kubah dengan lapisan GRC berkualitas premium, tahan karat, dan warna yang tidak mudah pudar hingga puluhan tahun.",
   },
   {
     image: "./assets/images/dome-type/type4.jpg",
-    title: "Kubah Titanium",
+    title: "Kubah Stainless Gold",
     description:
-      "Teknologi terbaru dengan material ringan namun sangat kuat, memberikan perlindungan maksimal dengan estetika modern.",
+      "Kubah dengan lapisan emas berkualitas premium, tahan karat, dan warna yang tidak mudah pudar hingga puluhan tahun.",
   },
   {
-    image: "./assets/images/dome-shape/shape1.jpg",
+    image: "./assets/images/dome-shape/shape3.jpg",
     title: "Kubah Setengah Bola",
     description:
       "Desain klasik yang memberikan kesan megah dan proporsional untuk bangunan masjid Anda.",
   },
   {
-    image: "./assets/images/dome-shape/shape2.jpg",
-    title: "Kubah Madinah",
+    image: "./assets/images/dome-shape/shape1.jpg",
+    title: "Kubah Madina",
     description:
       "Inspirasi desain dari Masjid Nabawi, memberikan nuansa spiritual yang kental dan indah.",
   },
@@ -188,8 +188,8 @@ const ProductPage = () => {
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`h-1.5 md:h-2 rounded-full transition-all duration-300 ${currentIndex === index
-                    ? "w-8 md:w-10 bg-primary"
-                    : "w-1.5 md:w-2 bg-gray-300 hover:bg-primary/40"
+                  ? "w-8 md:w-10 bg-primary"
+                  : "w-1.5 md:w-2 bg-gray-300 hover:bg-primary/40"
                   }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
