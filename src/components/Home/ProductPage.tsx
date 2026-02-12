@@ -19,7 +19,7 @@ const products = [
     image: "./assets/images/dome-type/type3.png",
     title: "Kubah GRC",
     description:
-      "Kubah dengan lapisan GRC berkualitas premium, tahan karat, dan warna yang tidak mudah pudar hingga puluhan tahun.",
+      "Memberikan kilau yang elegan dan ketahanan luar biasa terhadap karat, cocok untuk daerah pesisir.",
   },
   {
     image: "./assets/images/dome-type/type4.jpg",

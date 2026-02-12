@@ -1,44 +1,8 @@
 import { FiMail, FiMapPin, FiGlobe } from "react-icons/fi";
-import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
 const ContactPage = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const { name, email, subject, message } = formData;
-
-    const mailSubject = encodeURIComponent(subject);
-    const mailBody = encodeURIComponent(
-      `Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`,
-    );
-
-    window.location.href = `mailto:domeindonesia@gmail.com?subject=${mailSubject}&body=${mailBody}`;
-
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
-  };
 
   const contactInfo = [
     {
@@ -132,63 +96,7 @@ const ContactPage = () => {
             })}
           </div>
 
-          <div className="lg:col-span-2 bg-white rounded-xl shadow-lg p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">
-              Kirim Pesan
-            </h3>
-            <form
-              onSubmit={handleSubmit}
-              className="flex flex-col gap-4 space-y-4"
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Nama Anda"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition"
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email Anda"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition"
-                />
-              </div>
 
-              <input
-                type="text"
-                name="subject"
-                placeholder="Subjek Pesan"
-                value={formData.subject}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition"
-              />
-
-              <textarea
-                name="message"
-                placeholder="Pesan Anda"
-                rows={6}
-                value={formData.message}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition resize-none"
-              />
-
-              <button
-                type="submit"
-                className="w-full bg-primary text-white rounded-lg font-semibold hover:bg-primary/20 hover:text-primary hover:border-2 cursor-pointer  py-4 transition-colors duration-200"
-              >
-                Kirim Pesan
-              </button>
-            </form>
-          </div>
         </div>
       </div>
     </section>
