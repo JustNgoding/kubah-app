@@ -7,6 +7,7 @@ import ContactPage from "./ContactPage";
 import DomeShape from "./DomeShape";
 import DomeType from "./DomeType";
 import PortofolioPage from "./PortofolioPage";
+import ProductPage from "./ProductPage";
 import WelcomePage from "./WelcomePage";
 
 const Home = () => {
@@ -18,6 +19,9 @@ const Home = () => {
         </section>
         <section className="scroll-mt-28">
           <BenefitPage />
+        </section>
+        <section id="produk" className="scroll-mt-28">
+          <ProductPage />
         </section>
         <section id="tentang-kami" className="scroll-mt-28">
           <AboutPage />
