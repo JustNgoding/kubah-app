@@ -4,8 +4,7 @@ const WelcomePage = () => {
       <div className="mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between gap-8 px-6 md:px-12 py-12 md:py-24 ">
         <div className="w-full md:w-1/2 order-2 md:order-1">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 leading-tight">
-            Setiap Kubah Yang Kami <span className="text-primary">Bangun</span>{" "}
-            Menjadi <span className="text-primary">Amanah</span> Yang Kami Jaga
+            <span className="text-primary">Dome Indonesia</span> - Produsen Kubah Masjid <span className="text-primary">Berkualitas, Amanah</span>
           </h1>
           <p className="text-lg text-gray-600 mb-6 leading-relaxed">
             Kami menyediakan berbagai jenis kubah berkualitas tinggi dengan
