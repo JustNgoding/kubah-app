@@ -18,7 +18,7 @@ const WelcomePage = () => {
             </button>
             <a
               href="#kontak-kami"
-              className="px-8 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-blue-50 transition"
+              className="px-8 py-3 border-2 border-primary text-primary rounded-lg font-semibold text-center hover:bg-blue-50 transition"
             >
               Hubungi Kami
             </a>
