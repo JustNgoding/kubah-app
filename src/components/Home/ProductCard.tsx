@@ -22,7 +22,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full object-cover scale-110 origin-top-left transition-transform duration-500 group-hover:scale-115"
         />
         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
       </div>

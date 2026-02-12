@@ -30,7 +30,7 @@ const PortofolioPage = () => {
                     alt={`Project Portfolio ${item.id}`}
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                    className="w-full h-full object-cover scale-110 origin-top-left group-hover:scale-115 transition duration-500"
                   />
 
                   <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
