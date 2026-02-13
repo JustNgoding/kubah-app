@@ -4,28 +4,28 @@ import ProductCard from "./ProductCard";
 
 const products = [
   {
-    image: "./assets/images/dome-type/type1.png",
-    title: "Kubah Enamel",
+    image: "./assets/images/product/nabawi.jpeg",
+    title: "Kubah Nabawi",
     description:
-      "Kubah dengan lapisan porselen kualitas premium, tahan karat, dan warna yang tidak mudah pudar hingga puluhan tahun.",
+      "Replika desain agung Masjid Nabawi, mengombinasikan seni islami tradisional dengan kemegahan modern.",
   },
   {
-    image: "./assets/images/dome-type/type2.png",
-    title: "Kubah Galvalum",
+    image: "./assets/images/product/madina.jpeg",
+    title: "Kubah Madina",
     description:
-      "Terbuat dari bahan baja ringan berlapis seng dan aluminium, sangat tahan terhadap korosi dan cuaca ekstrem.",
+      "Memiliki ciri khas bentuk oval yang elegan, terinspirasi dari arsitektur klasik yang memberikan kesan kedamaian.",
   },
   {
-    image: "./assets/images/dome-type/type3.png",
-    title: "Kubah GRC",
+    image: "./assets/images/product/pinang.jpeg",
+    title: "Kubah Pinang",
     description:
-      "Memberikan kilau yang elegan dan ketahanan luar biasa terhadap karat, cocok untuk daerah pesisir.",
+      "Bentuk tirus yang menjulang tinggi, memberikan kesan ramping dan elegan pada siluet masjid.",
   },
   {
-    image: "./assets/images/dome-type/type4.jpg",
-    title: "Kubah Stainless Gold",
+    image: "./assets/images/product/bawang.jpeg",
+    title: "Kubah Bawang",
     description:
-      "Kubah dengan lapisan emas berkualitas premium, tahan karat, dan warna yang tidak mudah pudar hingga puluhan tahun.",
+      "Bentuk melengkung eksotis yang memberikan tampilan arsitektur ikonik khas Timur Tengah.",
   },
   {
     image: "./assets/images/dome-shape/shape3.jpg",
@@ -34,16 +34,28 @@ const products = [
       "Desain klasik yang memberikan kesan megah dan proporsional untuk bangunan masjid Anda.",
   },
   {
-    image: "./assets/images/dome-shape/shape1.jpg",
-    title: "Kubah Madina",
+    image: "./assets/images/dome-type/type4.jpg",
+    title: "Kubah Stainless Gold",
     description:
-      "Memiliki ciri khas bentuk oval yang elegan, terinspirasi dari arsitektur klasik yang memberikan kesan kedamaian.",
+      "Kubah dengan lapisan emas berkualitas premium, tahan karat, dan warna yang tidak mudah pudar hingga puluhan tahun.",
   },
   {
-    image: "./assets/images/dome-shape/shape5.jpeg",
-    title: "Kubah Nabawi",
+    image: "./assets/images/dome-type/type3.png",
+    title: "Kubah GRC",
     description:
-      "Replika desain agung Masjid Nabawi, mengombinasikan seni islami tradisional dengan kemegahan modern.",
+      "Memberikan kilau yang elegan dan ketahanan luar biasa terhadap karat, cocok untuk daerah pesisir.",
+  },
+  {
+    image: "./assets/images/dome-type/type2.png",
+    title: "Kubah Galvalum",
+    description:
+      "Terbuat dari bahan baja ringan berlapis seng dan aluminium, sangat tahan terhadap korosi dan cuaca ekstrem.",
+  },
+  {
+    image: "./assets/images/dome-type/type1.png",
+    title: "Kubah Enamel",
+    description:
+      "Kubah dengan lapisan porselen kualitas premium, tahan karat, dan warna yang tidak mudah pudar hingga puluhan tahun.",
   },
 ];
 
