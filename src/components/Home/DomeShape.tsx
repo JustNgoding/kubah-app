@@ -9,78 +9,82 @@ const DomeShape = () => {
     {
       title: "Kubah Madina",
       description:
-        "Kubah madinah juga sering disebut dengan kubah oval karena bentuknya tidak setengah lingkaran tapi cenderung oval.",
+        "Memiliki ciri khas bentuk oval yang elegan, terinspirasi dari arsitektur klasik yang memberikan kesan kedamaian.",
       image: "./assets/images/dome-shape/shape1.jpg",
     },
     {
       title: "Kubah Bawang",
       description:
-        "Bentuk seperti bawang. Kubah bawang sering ditemukandi India dan negara-negara di kawasan Asia Tengah",
+        "Bentuk melengkung eksotis yang melebar di tengah, memberikan tampilan arsitektur ikonik khas Timur Tengah.",
       image: "./assets/images/dome-shape/shape2.jpg",
     },
     {
       title: "Kubah Setengah Bola",
       description:
-        "Kubah setengah bola memiliki bentuk yang estetis dan elegan dengan perakitanyang relatif mudah.",
+        "Desain simetris yang memberikan kesan megah and proporsional, sangat populer karena ketahanannya.",
       image: "./assets/images/dome-shape/shape3.jpg",
     },
     {
       title: "Kubah Pinang",
       description:
-        "Dinamakan pinang karena mengacu pada bentuk batang pohon pinang, yaitu tirus dan menggembung di bagian sisi lingkar luarnya. Modelnya tirus dan tinggi.",
+        "Bentuk tirus yang menjulang tinggi, memberikan kesan ramping dan elegan pada tampilan siluet masjid.",
       image: "./assets/images/dome-shape/shape4.jpg",
     },
     {
       title: "Kubah Nabawi",
       description:
-        "Inspirasi desain dari Masjid Nabawi, dengan proporsi yang megah dan detail yang memperkuat nuansa islami.",
+        "Replika desain agung Masjid Nabawi, mengombinasikan seni islami tradisional dengan kemegahan modern.",
       image: "./assets/images/dome-shape/shape5.jpeg",
     },
   ];
 
   return (
-    <>
-      <section className="py-12 md:py-20 bg-secondary ">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 ">
-          <h1 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            Bentuk Kubah
-          </h1>
-
-          <p className="text-center mx-auto text-gray-600 max-w-2xl mb-12">
-            Berikut beberapa bentuk kubah yang umum digunakan pada masjid dan
-            bangunan religius, disesuaikan dengan kebutuhan estetika dan
-            struktur.
+    <section className="py-16 md:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="flex flex-col items-center mb-16 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mx-auto mb-4 text-gray-900">
+            Berbagai Bentuk Kubah
+          </h2>
+          <div className="w-24 h-1.5 bg-primary rounded-full mb-8"></div>
+          <p className="max-w-3xl text-gray-600 text-lg leading-relaxed">
+            Setiap bentuk kubah mamiliki filosofi dan estetika yang unik. Kami memudahkan Anda memilih bentuk yang paling sesuai dengan karakteristik masjid Anda.
           </p>
-
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {data.map((item, index) => {
-              const isLast = index === data.length - 1 && data.length % 3 === 1;
-
-              return (
-                <div
-                  key={item.title}
-                  className={`bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden
-        ${isLast ? "lg:col-span-3 lg:max-w-sm lg:mx-auto" : ""}`}
-                >
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="h-56 w-full object-cover"
-                  />
-
-                  <div className="p-5">
-                    <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
         </div>
-      </section>
-    </>
+
+        <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {data.map((item, index) => (
+            <div
+              key={index}
+              className="group relative bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100"
+            >
+              <div className="relative h-72 overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
+              </div>
+
+              <div className="p-8">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
+                    0{index + 1}
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-800">{item.title}</h3>
+                </div>
+                <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
+                  {item.description}
+                </p>
+              </div>
+
+              {/* Decorative accent */}
+              <div className="absolute bottom-0 left-0 w-0 h-1 bg-primary group-hover:w-full transition-all duration-500"></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
