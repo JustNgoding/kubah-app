@@ -4,7 +4,11 @@ const WelcomePage = () => {
       <div className="mx-auto max-w-7xl flex flex-col md:flex-row items-center justify-between gap-8 px-6 md:px-12 py-12 md:py-24 ">
         <div className="w-full md:w-1/2 order-2 md:order-1">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 leading-tight">
-            <span className="text-primary">Dome Indonesia</span> - Produsen Kubah Masjid <span className="text-primary">Berkualitas, Amanah</span>
+            <span className="text-primary inter font-extrabold uppercase">
+              Dome Indonesia
+            </span>{" "}
+            - Produsen Kubah Masjid{" "}
+            <span className="text-primary">Berkualitas, Amanah</span>
           </h1>
           <p className="text-lg text-gray-600 mb-6 leading-relaxed">
             Kami menyediakan berbagai jenis kubah berkualitas tinggi dengan
@@ -12,7 +16,10 @@ const WelcomePage = () => {
             Anda dengan produk unggulan kami.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href="#produk" className="px-8 py-3 text-center bg-primary text-white rounded-lg font-semibold hover:bg-primary/20 hover:text-primary hover:border-2 cursor-pointer  transition">
+            <a
+              href="#produk"
+              className="px-8 py-3 text-center bg-primary text-white rounded-lg font-semibold hover:bg-primary/20 hover:text-primary hover:border-2 cursor-pointer  transition"
+            >
               Jelajahi Produk
             </a>
             <a

@@ -11,7 +11,7 @@ const ContactPage = () => {
     {
       icon: FiMail,
       title: "Email",
-      content: ["domeindonesia@gmail.com"],
+      content: ["domeid.ofc@gmail.com"],
     },
     {
       icon: FiMapPin,
