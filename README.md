@@ -1,73 +1,72 @@
-# React + TypeScript + Vite
+# Kubah App - Solusi Kubah Masjid Premium
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Kubah App adalah landing page modern dan elegan yang dirancang khusus untuk mempromosikan solusi pembuatan kubah masjid berkualitas tinggi. Dengan desain premium, responsif, dan interaktif, aplikasi ini memberikan pengalaman pengguna yang luar biasa bagi calon pelanggan.
 
-Currently, two official plugins are available:
+![Kubah App Preview](https://via.placeholder.com/1200x600?text=Kubah+App+Preview)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Fitur Utama
 
-## React Compiler
+- **Desain Premium & Modern**: Menggunakan estetika visual terkini dengan animasi halus.
+- **Katalog Produk Interaktif**: Menampilkan berbagai jenis dan bentuk kubah dengan detail yang jelas.
+- **Responsif**: Dioptimalkan untuk pengalaman terbaik di perangkat mobile, tablet, dan desktop.
+- **Integrasi WhatsApp**: Memudahkan pelanggan untuk berkonsultasi langsung melalui tombol "Beli Sekarang".
+- **Visualisasi Motif & Bentuk**: Informasi detail tentang spesifikasi material dan bentuk kubah.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Teknologi yang Digunakan
 
-## Expanding the ESLint configuration
+- **React 18**: Library JavaScript untuk membangun antarmuka pengguna.
+- **TypeScript**: Menjamin keamanan tipe data dan pengembangan yang lebih terstruktur.
+- **Vite**: Alat build yang sangat cepat untuk pengembangan frontend.
+- **Tailwind CSS**: Utility-first CSS framework untuk styling yang cepat dan custom.
+- **React Icons**: Kumpulan ikon populer untuk mempercantik UI.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Persyaratan Sistem
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Node.js**: Versi 18.x atau lebih baru.
+- **Yarn** atau **npm**: Buffer manajemen paket.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Instalasi & Pengembangan LOKAL
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1.  **Clone repositori ini:**
+    ```bash
+    git clone https://github.com/username/kubah-app.git
+    cd kubah-app
+    ```
+
+2.  **Instal dependensi:**
+    ```bash
+    yarn install
+    # atau
+    npm install
+    ```
+
+3.  **Jalankan server pengembangan:**
+    ```bash
+    yarn dev
+    # atau
+    npm run dev
+    ```
+
+4.  **Buka di browser:**
+    Akses `http://localhost:5173` untuk melihat hasilnya.
+
+## Build untuk Produksi
+
+Untuk membuat build produksi yang dioptimalkan:
+```bash
+yarn build
+# atau
+npm run build
 ```
+Hasil build akan tersedia di folder `dist/`.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Kontak & Dukungan
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Jika Anda memiliki pertanyaan atau butuh bantuan lebih lanjut, silakan hubungi tim kami:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **WhatsApp**: [+62 851-1760-5188](https://wa.me/6285117605188)
+- **Website**: [www.pusatubahl.com](https://www.pusatubahl.com)
+
+---
+
+Dibuat oleh Tim Kubah App.
