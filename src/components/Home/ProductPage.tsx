@@ -34,10 +34,22 @@ const products = [
       "Desain klasik yang memberikan kesan megah dan proporsional untuk bangunan masjid Anda.",
   },
   {
-    image: "./assets/images/dome-shape/shape1.jpg",
-    title: "Kubah Madina",
+    image: "./assets/images/dome-shape/shape2.jpg",
+    title: "Kubah Bawang",
     description:
-      "Inspirasi desain dari Masjid Nabawi, memberikan nuansa spiritual yang kental dan indah.",
+      "Memiliki bentuk unik seperti bawang, memberikan kesan arsitektur klasik Timur Tengah dan Asia Selatan yang sangat eksotis.",
+  },
+  {
+    image: "./assets/images/dome-shape/shape4.jpg",
+    title: "Kubah Pinang",
+    description:
+      "Desain yang ramping dan meninggi menyerupai buah pinang, memberikan kesan elegan dan modern pada arsitektur masjid.",
+  },
+  {
+    image: "./assets/images/dome-shape/shape5.jpeg",
+    title: "Kubah Nabawi",
+    description:
+      "Replika desain ikonik dari Masjid Nabawi, dengan proporsi yang megah dan detail yang memperkuat nuansa islami.",
   },
 ];
 

@@ -30,6 +30,12 @@ const DomeShape = () => {
         "Dinamakan pinang karena mengacu pada bentuk batang pohon pinang, yaitu tirus dan menggembung di bagian sisi lingkar luarnya. Modelnya tirus dan tinggi.",
       image: "./assets/images/dome-shape/shape4.jpg",
     },
+    {
+      title: "Kubah Nabawi",
+      description:
+        "Inspirasi desain dari Masjid Nabawi, dengan proporsi yang megah dan detail yang memperkuat nuansa islami.",
+      image: "./assets/images/dome-shape/shape5.jpeg",
+    },
   ];
 
   return (
