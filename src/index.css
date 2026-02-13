@@ -37,3 +37,8 @@ body {
   scrollbar-width: thin;
   scrollbar-color: var(--color-primary) transparent;
 }
+
+.inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+}

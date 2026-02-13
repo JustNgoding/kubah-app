@@ -82,7 +82,7 @@ const Footer = () => {
                   href="mailto:domeindonesia@gmail.com"
                   className="hover:text-primary transition-colors"
                 >
-                  domeindonesia@gmail.com
+                  domeid.ofc@gmail.com
                 </a>
               </div>
 
