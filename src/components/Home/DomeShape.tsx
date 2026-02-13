@@ -34,7 +34,7 @@ const DomeShape = () => {
 
   return (
     <>
-      <section className="py-12 md:py-20 bg-secondary min-h-screen">
+      <section className="py-12 md:py-20 bg-secondary ">
         <div className="max-w-7xl mx-auto px-6 md:px-12 ">
           <h1 className="text-3xl md:text-4xl font-bold text-center mb-4">
             Bentuk Kubah

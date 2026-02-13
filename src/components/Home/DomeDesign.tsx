@@ -13,7 +13,7 @@ const images = [
 
 const DomeDesign = () => {
   return (
-    <section className="py-16 bg-white min-h-screen">
+    <section className="py-16 bg-white ">
       <div className="max-w-7xl mx-auto px-6">
         <div className="columns-2 sm:columns-3 lg:columns-4 gap-6 space-y-6">
           {images.map((src, index) => (

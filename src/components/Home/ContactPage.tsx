@@ -2,8 +2,6 @@ import { FiMail, FiMapPin, FiGlobe } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 
 const ContactPage = () => {
-
-
   const contactInfo = [
     {
       icon: FaWhatsapp,
@@ -31,7 +29,7 @@ const ContactPage = () => {
   ];
 
   return (
-    <section className="py-12 md:py-20 bg-white min-h-screen">
+    <section className="py-12 md:py-20 bg-white ">
       <div className="max-w-7xl mx-auto px-6 md:px-12 ">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
@@ -56,11 +54,17 @@ const ContactPage = () => {
                   className="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 hover:shadow-md transition-all duration-300 group"
                 >
                   <div className="flex items-center gap-4">
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-colors duration-300 ${isWA ? "bg-green-50 text-green-600 group-hover:bg-green-600 group-hover:text-white" :
-                      isEmail ? "bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white" :
-                        isWeb ? "bg-purple-50 text-purple-600 group-hover:bg-purple-600 group-hover:text-white" :
-                          "bg-amber-50 text-amber-600 group-hover:bg-amber-600 group-hover:text-white"
-                      }`}>
+                    <div
+                      className={`w-12 h-12 rounded-xl flex items-center justify-center transition-colors duration-300 ${
+                        isWA
+                          ? "bg-green-50 text-green-600 group-hover:bg-green-600 group-hover:text-white"
+                          : isEmail
+                            ? "bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white"
+                            : isWeb
+                              ? "bg-purple-50 text-purple-600 group-hover:bg-purple-600 group-hover:text-white"
+                              : "bg-amber-50 text-amber-600 group-hover:bg-amber-600 group-hover:text-white"
+                      }`}
+                    >
                       <Icon className="text-2xl" />
                     </div>
                     <div className="flex-1">
@@ -68,7 +72,10 @@ const ContactPage = () => {
                         {info.title}
                       </h3>
                       {info.content.map((text, i) => (
-                        <div key={i} className="text-gray-800 font-semibold text-sm">
+                        <div
+                          key={i}
+                          className="text-gray-800 font-semibold text-sm"
+                        >
                           {isWA ? (
                             <a
                               href={`https://wa.me/6285117605188?text=${encodeURIComponent("Halo, saya ingin konsultasi tentang kubah masjid")}`}
@@ -115,32 +122,49 @@ const ContactPage = () => {
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
                     <FiGlobe className="text-primary text-2xl" />
                   </div>
-                  <h4 className="font-bold text-gray-900 text-sm">Jangkauan Luas</h4>
-                  <p className="text-xs text-gray-500 mt-1">Melayani pengiriman & pemasangan seluruh Indonesia</p>
+                  <h4 className="font-bold text-gray-900 text-sm">
+                    Jangkauan Luas
+                  </h4>
+                  <p className="text-xs text-gray-500 mt-1">
+                    Melayani pengiriman & pemasangan seluruh Indonesia
+                  </p>
                 </div>
 
                 <div className="flex flex-col items-center text-center p-4 bg-secondary/10 rounded-lg transition-transform hover:scale-105 duration-300">
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
                     <FaWhatsapp className="text-primary text-2xl" />
                   </div>
-                  <h4 className="font-bold text-gray-900 text-sm">Konsultasi Gratis</h4>
-                  <p className="text-xs text-gray-500 mt-1">Layanan tanya jawab teknis tanpa biaya</p>
+                  <h4 className="font-bold text-gray-900 text-sm">
+                    Konsultasi Gratis
+                  </h4>
+                  <p className="text-xs text-gray-500 mt-1">
+                    Layanan tanya jawab teknis tanpa biaya
+                  </p>
                 </div>
 
                 <div className="flex flex-col items-center text-center p-4 bg-secondary/10 rounded-lg transition-transform hover:scale-105 duration-300">
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
                     <FiMapPin className="text-primary text-2xl" />
                   </div>
-                  <h4 className="font-bold text-gray-900 text-sm">Pemasangan Ahli</h4>
-                  <p className="text-xs text-gray-500 mt-1">Dikerjakan oleh tim profesional berpengalaman</p>
+                  <h4 className="font-bold text-gray-900 text-sm">
+                    Pemasangan Ahli
+                  </h4>
+                  <p className="text-xs text-gray-500 mt-1">
+                    Dikerjakan oleh tim profesional berpengalaman
+                  </p>
                 </div>
               </div>
             </div>
 
             <div className="bg-primary text-white p-8 md:p-10 rounded-2xl shadow-lg relative overflow-hidden group">
               <div className="relative z-10">
-                <h4 className="text-2xl font-bold mb-3">Ingin tahu lebih banyak?</h4>
-                <p className="text-white/80 mb-8 max-w-md">Jangan ragu untuk menghubungi kami melalui tombol Whatsapp untuk respon lebih cepat.</p>
+                <h4 className="text-2xl font-bold mb-3">
+                  Ingin tahu lebih banyak?
+                </h4>
+                <p className="text-white/80 mb-8 max-w-md">
+                  Jangan ragu untuk menghubungi kami melalui tombol Whatsapp
+                  untuk respon lebih cepat.
+                </p>
                 <a
                   href="https://wa.me/6285117605188"
                   target="_blank"

@@ -26,7 +26,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         />
         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
       </div>
-      <div className="p-4 sm:p-6 flex flex-col flex-grow">
+      <div className="p-4 sm:p-6 flex flex-col ">
         <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2 group-hover:text-primary transition-colors">
           {title}
         </h3>

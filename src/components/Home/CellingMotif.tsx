@@ -22,8 +22,8 @@ const CellingMotif = () => {
                   key={index}
                   className={`relative ${item.size} rounded-xl overflow-hidden shadow-md hover:shadow-xl transition group`}
                   style={{
-                    contentVisibility: 'auto',
-                    containIntrinsicSize: 'auto 200px'
+                    contentVisibility: "auto",
+                    containIntrinsicSize: "auto 200px",
                   }}
                 >
                   <img
@@ -34,16 +34,14 @@ const CellingMotif = () => {
                     className="w-full h-full object-cover scale-110 origin-top-left group-hover:scale-115 transition duration-500"
                   />
 
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
-                    {/* Dark overlay on hover */}
-                  </div>
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center"></div>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Bottom Fade indicator */}
-          <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent pointer-events-none z-10" />
+          <div className="absolute bottom-0 left-0 right-0 h-20  from-white to-transparent pointer-events-none z-10" />
 
           <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-primary font-medium text-sm flex items-center gap-2 animate-bounce">
             <span>Scroll kebawah</span>

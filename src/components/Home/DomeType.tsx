@@ -34,7 +34,7 @@ const domeList: DomeItem[] = [
 const DomeType = () => {
   return (
     <>
-      <section className="py-12 md:py-20 bg-white min-h-screen">
+      <section className="py-12 md:py-20 bg-white ">
         <div className="max-w-7xl mx-auto px-6 md:px-12 ">
           <h1 className="text-3xl md:text-4xl font-bold text-center mx-auto mb-4">
             Berbagai Jenis Bahan Kubah

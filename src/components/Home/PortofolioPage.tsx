@@ -21,8 +21,8 @@ const PortofolioPage = () => {
                   key={item.id}
                   className={`relative ${item.span} rounded-xl overflow-hidden shadow-md hover:shadow-xl transition group`}
                   style={{
-                    contentVisibility: 'auto',
-                    containIntrinsicSize: 'auto 200px'
+                    contentVisibility: "auto",
+                    containIntrinsicSize: "auto 200px",
                   }}
                 >
                   <img
@@ -42,7 +42,7 @@ const PortofolioPage = () => {
           </div>
 
           {/* Bottom Fade indicator */}
-          <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-secondary to-transparent pointer-events-none z-10" />
+          <div className="absolute bottom-0 left-0 right-0 h-20  from-secondary to-transparent pointer-events-none z-10" />
 
           <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-primary font-medium text-sm flex items-center gap-2 animate-bounce">
             <span>Scroll kebawah</span>
