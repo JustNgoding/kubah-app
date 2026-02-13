@@ -10,13 +10,13 @@ const DomeShape = () => {
       title: "Kubah Madina",
       description:
         "Memiliki ciri khas bentuk oval yang elegan, terinspirasi dari arsitektur klasik yang memberikan kesan kedamaian.",
-      image: "./assets/images/dome-shape/shape1.jpg",
+      image: "./assets/images/dome-shape/shape1.jpeg",
     },
     {
       title: "Kubah Bawang",
       description:
         "Bentuk melengkung eksotis yang melebar di tengah, memberikan tampilan arsitektur ikonik khas Timur Tengah.",
-      image: "./assets/images/dome-shape/shape2.jpg",
+      image: "./assets/images/dome-shape/shape2.jpeg",
     },
     {
       title: "Kubah Setengah Bola",
@@ -57,7 +57,7 @@ const DomeShape = () => {
               key={index}
               className="group relative bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100"
             >
-              <div className="relative h-80 md:h-[450px] overflow-hidden">
+              <div className="relative h-80 md:h-[320px] overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.title}
