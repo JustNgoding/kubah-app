@@ -5,7 +5,6 @@ const Footer = () => {
 
   const navMain = [
     { label: "Home", href: "/" },
-    { label: "Produk", href: "#produk" },
     { label: "Tentang Kami", href: "#tentang-kami" },
     { label: "Project Kami", href: "#project-kami" },
     { label: "Kontak", href: "#kontak-kami" },

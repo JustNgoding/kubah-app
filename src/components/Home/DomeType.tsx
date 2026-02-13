@@ -37,7 +37,7 @@ const DomeType = () => {
       <section className="py-12 md:py-20 bg-white min-h-screen">
         <div className="max-w-7xl mx-auto px-6 md:px-12 ">
           <h1 className="text-3xl md:text-4xl font-bold text-center mx-auto mb-4">
-            Jenis-Jenis Kubah
+            Berbagai Jenis Bahan Kubah
           </h1>
 
           <p className="text-center mx-auto text-gray-600 max-w-2xl mb-12">
