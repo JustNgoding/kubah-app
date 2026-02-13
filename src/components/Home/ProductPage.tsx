@@ -37,7 +37,13 @@ const products = [
     image: "./assets/images/dome-shape/shape1.jpg",
     title: "Kubah Madina",
     description:
-      "Inspirasi desain dari Masjid Nabawi, memberikan nuansa spiritual yang kental dan indah.",
+      "Memiliki ciri khas bentuk oval yang elegan, terinspirasi dari arsitektur klasik yang memberikan kesan kedamaian.",
+  },
+  {
+    image: "./assets/images/dome-shape/shape5.jpeg",
+    title: "Kubah Nabawi",
+    description:
+      "Replika desain agung Masjid Nabawi, mengombinasikan seni islami tradisional dengan kemegahan modern.",
   },
 ];
 

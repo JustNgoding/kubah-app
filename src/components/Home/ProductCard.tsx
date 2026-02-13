@@ -18,13 +18,13 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
   return (
     <div className="bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 group h-full flex flex-col">
-      <div className="relative h-48 sm:h-64 overflow-hidden">
+      <div className="relative h-72 md:h-[320px] overflow-hidden">
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover scale-110 origin-top-left transition-transform duration-500 group-hover:scale-115"
+          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+        <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors" />
       </div>
       <div className="p-4 sm:p-6 flex flex-col ">
         <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2 group-hover:text-primary transition-colors">
