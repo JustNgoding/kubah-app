@@ -1,5 +1,5 @@
+// src/components/Navbar.tsx
 import { useState } from "react";
-import { useLocation, useNavigate } from "react-router";
 import type { IconType } from "react-icons";
 import {
   HiMenuAlt3,
@@ -23,119 +23,93 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeHash, setActiveHash] = useState("#home");
 
-  const location = useLocation();
-  const navigate = useNavigate();
-
+  // ✅ Hapus useLocation & useNavigate — pakai smooth scroll biasa
   const mainNav: NavItem[] = [
-    { label: "Home", path: "/", icon: HiHome },
-    { label: "Produk", path: "#produk", icon: HiCube },
-    { label: "Tentang Kami", path: "#tentang-kami", icon: HiInformationCircle },
-    { label: "Jenis Kubah", path: "#jenis-kubah", icon: HiCollection },
-    { label: "Bentuk Kubah", path: "#bentuk-kubah", icon: HiCube },
-    { label: "Motif Plafon", path: "#motif-plafon", icon: HiSparkles },
-    { label: "Project Kami", path: "#project-kami", icon: HiFolderOpen },
-    { label: "Kontak Kami", path: "#kontak-kami", icon: HiMail },
+    { label: "Home", path: "home", icon: HiHome },
+    { label: "Produk", path: "produk", icon: HiCube },
+    { label: "Tentang Kami", path: "tentang-kami", icon: HiInformationCircle },
+    { label: "Jenis Kubah", path: "jenis-kubah", icon: HiCollection },
+    { label: "Bentuk Kubah", path: "bentuk-kubah", icon: HiCube },
+    { label: "Motif Plafon", path: "motif-plafon", icon: HiSparkles },
+    { label: "Project Kami", path: "project-kami", icon: HiFolderOpen },
+    { label: "Kontak Kami", path: "kontak-kami", icon: HiMail },
   ];
 
-  const isHomeActive = location.pathname === "/" && activeHash === "#home";
-
-  const handleHomeClick = () => {
-    navigate("/");
-    window.scrollTo({ top: 0 });
-    setActiveHash("#home");
+  // ✅ Smooth scroll tanpa hash router
+  const handleScrollTo = (id: string) => {
+    setActiveHash(id);
     setIsOpen(false);
-  };
 
-  const handleHashClick = (hash: string) => {
-    setActiveHash(hash);
-    setIsOpen(false);
+    if (id === "home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <nav className="fixed top-0 z-40 w-full bg-primary px-4  py-4 md:py-8 md:px-20">
+    <nav className="fixed top-0 z-40 w-full bg-primary px-4 py-4 md:py-8 md:px-20">
       <div className="mx-auto flex max-w-7xl items-center justify-between">
+        {/* Logo */}
         <button
-          onClick={handleHomeClick}
+          onClick={() => handleScrollTo("home")}
           className="relative h-10 md:h-12 w-32 md:w-48 flex items-center hover:opacity-90 transition-opacity z-50"
         >
           <img
             src="./assets/images/logo/dome_logo.png"
-            alt="Dome Indonesia Logo"
+            alt="Dome Indonesia - Produsen Kubah Masjid Terbaik"
             className="absolute top-[20px] left-0 -translate-y-1/2 h-16 md:h-24 w-auto object-contain drop-shadow-md"
           />
         </button>
-        <ul className="hidden items-center gap-6 font-semibold text-white lg:flex">
-          {mainNav.map((item) => {
-            if (item.path === "/") {
-              return (
-                <li key={item.label}>
-                  <button
-                    onClick={handleHomeClick}
-                    className={`flex items-center gap-2 ${isHomeActive ? "text-blue-300" : ""
-                      }`}
-                  >
-                    {item.label}
-                  </button>
-                </li>
-              );
-            }
 
-            return (
-              <li key={item.label}>
-                <a
-                  href={item.path}
-                  onClick={() => handleHashClick(item.path)}
-                  className={`flex items-center gap-2 ${activeHash === item.path ? "text-blue-300" : ""
-                    }`}
-                >
-                  {item.label}
-                </a>
-              </li>
-            );
-          })}
+        {/* Desktop Nav */}
+        <ul className="hidden items-center gap-6 font-semibold text-white lg:flex">
+          {mainNav.map((item) => (
+            <li key={item.label}>
+              <button
+                onClick={() => handleScrollTo(item.path)}
+                className={`flex items-center gap-2 transition-colors hover:text-blue-300 ${
+                  activeHash === item.path ? "text-blue-300" : ""
+                }`}
+              >
+                {item.label}
+              </button>
+            </li>
+          ))}
         </ul>
 
+        {/* Hamburger */}
         <button
           className="text-2xl text-white lg:hidden"
           onClick={() => setIsOpen((p) => !p)}
+          aria-label="Toggle Menu"
         >
           {isOpen ? <HiX /> : <HiMenuAlt3 />}
         </button>
       </div>
 
+      {/* Mobile Nav */}
       <div
-        className={`lg:hidden overflow-hidden transition-all duration-300 ${isOpen ? " opacity-100" : "max-h-0 opacity-0"
-          }`}
+        className={`lg:hidden overflow-hidden transition-all duration-300 ${
+          isOpen ? "opacity-100" : "max-h-0 opacity-0"
+        }`}
       >
         <ul className="flex flex-col gap-4 px-4 py-4 font-semibold text-white">
           {mainNav.map((item) => {
             const Icon = item.icon;
-
-            if (item.path === "/") {
-              return (
+            return (
+              <li key={item.label}>
                 <button
-                  key={item.label}
-                  onClick={handleHomeClick}
-                  className={`flex items-center gap-3 ${isHomeActive ? "text-blue-300" : ""
-                    }`}
+                  onClick={() => handleScrollTo(item.path)}
+                  className={`flex items-center gap-3 transition-colors hover:text-blue-300 ${
+                    activeHash === item.path ? "text-blue-300" : ""
+                  }`}
                 >
                   <Icon />
                   {item.label}
                 </button>
-              );
-            }
-
-            return (
-              <a
-                key={item.label}
-                href={item.path}
-                onClick={() => handleHashClick(item.path)}
-                className={`flex items-center gap-3 ${activeHash === item.path ? "text-blue-300" : ""
-                  }`}
-              >
-                <Icon />
-                {item.label}
-              </a>
+              </li>
             );
           })}
         </ul>

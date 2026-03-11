@@ -19,19 +19,18 @@ const Home = () => {
         <section className="scroll-mt-28">
           <BenefitPage />
         </section>
-        <section id="produk" className="scroll-mt-28">
+        <section className="scroll-mt-28">
           <ProductPage />
         </section>
         <section id="tentang-kami" className="scroll-mt-28">
           <AboutPage />
         </section>
-        <section id="jenis-kubah" className="scroll-mt-28">
+        <section className="scroll-mt-28">
           <DomeType />
         </section>
         <section id="bentuk-kubah" className="scroll-mt-28">
           <DomeShape />
         </section>
-
         <section id="motif-plafon" className="scroll-mt-28">
           <CellingMotif />
         </section>
