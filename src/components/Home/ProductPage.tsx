@@ -4,107 +4,104 @@ import ProductCard from "./ProductCard";
 
 const products = [
   {
-    image: "./assets/images/product/nabawi.jpeg",
+    image: "/assets/images/product/nabawi.jpeg",
     title: "Kubah Nabawi",
     description:
-      "Replika desain agung Masjid Nabawi, mengombinasikan seni islami tradisional dengan kemegahan modern.",
+      "Desain kubah terinspirasi dari Masjid Nabawi di Madinah dengan bentuk elegan dan proporsi megah. Cocok untuk masjid yang ingin menghadirkan nuansa klasik Timur Tengah.",
   },
   {
-    image: "./assets/images/product/madina.jpeg",
+    image: "/assets/images/product/madina.jpeg",
     title: "Kubah Madina",
     description:
-      "Memiliki ciri khas bentuk oval yang elegan, terinspirasi dari arsitektur klasik yang memberikan kesan kedamaian.",
+      "Model kubah dengan karakter lembut dan proporsi seimbang. Memberikan kesan tenang, elegan, dan sangat cocok untuk desain masjid modern maupun klasik.",
   },
   {
-    image: "./assets/images/product/pinang.jpeg",
+    image: "/assets/images/product/pinang.jpeg",
     title: "Kubah Pinang",
     description:
-      "Bentuk tirus yang menjulang tinggi, memberikan kesan ramping dan elegan pada siluet masjid.",
+      "Bentuk kubah yang ramping dan menjulang tinggi sehingga menciptakan siluet masjid yang lebih tegas dan elegan dari kejauhan.",
   },
   {
-    image: "./assets/images/product/bawang.jpeg",
+    image: "/assets/images/product/bawang.jpeg",
     title: "Kubah Bawang",
     description:
-      "Bentuk melengkung eksotis yang memberikan tampilan arsitektur ikonik khas Timur Tengah.",
+      "Bentuk kubah khas Timur Tengah dengan lengkungan yang lebih penuh di bagian tengah. Memberikan karakter arsitektur yang kuat dan ikonik.",
   },
   {
-    image: "./assets/images/dome-shape/shape3.jpg",
+    image: "/assets/images/dome-shape/shape3.jpg",
     title: "Kubah Setengah Bola",
     description:
-      "Desain klasik yang memberikan kesan megah dan proporsional untuk bangunan masjid Anda.",
+      "Desain kubah klasik berbentuk setengah bola yang banyak digunakan pada berbagai masjid karena tampilannya yang simetris dan megah.",
   },
   {
-    image: "./assets/images/dome-type/type4.jpg",
+    image: "/assets/images/dome-type/type4.jpg",
     title: "Kubah Stainless Gold",
     description:
-      "Kubah dengan lapisan emas berkualitas premium, tahan karat, dan warna yang tidak mudah pudar hingga puluhan tahun.",
+      "Menggunakan material stainless steel dengan finishing warna emas yang mewah. Tahan karat, kuat terhadap cuaca ekstrem, dan memberikan tampilan premium.",
   },
   {
-    image: "./assets/images/dome-type/type3.png",
+    image: "/assets/images/dome-type/type3.png",
     title: "Kubah GRC",
     description:
-      "Memberikan kilau yang elegan dan ketahanan luar biasa terhadap karat, cocok untuk daerah pesisir.",
+      "Material GRC (Glassfiber Reinforced Cement) yang kuat, ringan, dan mudah dibentuk. Cocok untuk desain kubah dengan detail ornamen yang kompleks.",
   },
   {
-    image: "./assets/images/dome-type/type2.png",
+    image: "/assets/images/dome-type/type2.png",
     title: "Kubah Galvalum",
     description:
-      "Terbuat dari bahan baja ringan berlapis seng dan aluminium, sangat tahan terhadap korosi dan cuaca ekstrem.",
+      "Terbuat dari baja ringan berlapis aluminium dan seng yang tahan terhadap korosi serta memiliki bobot ringan untuk struktur bangunan yang lebih efisien.",
   },
   {
-    image: "./assets/images/dome-type/type1.png",
+    image: "/assets/images/dome-type/type1.png",
     title: "Kubah Enamel",
     description:
-      "Kubah dengan lapisan porselen kualitas premium, tahan karat, dan warna yang tidak mudah pudar hingga puluhan tahun.",
+      "Menggunakan lapisan enamel porselen berkualitas tinggi yang diproses dengan pembakaran suhu tinggi sehingga warna lebih tahan lama dan tidak mudah pudar.",
   },
 ];
 
 const ProductPage = () => {
+  const totalProducts = products.length;
+
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [itemsPerPage, setItemsPerPage] = useState(3);
+  const [itemsPerPage, setItemsPerPage] = useState<number>(3);
+
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
-  const totalProducts = products.length;
-
-  // Minimum swipe distance (in px)
   const minSwipeDistance = 50;
 
   useEffect(() => {
-    const handleResize = () => {
-      let perPage = 3;
-      if (window.innerWidth < 640) {
-        perPage = 1.15; // Show a peek of the next card on mobile
-      } else if (window.innerWidth < 768) {
-        perPage = 1;
-      } else if (window.innerWidth < 1024) {
-        perPage = 2;
-      }
-      setItemsPerPage(perPage);
+    const updateItemsPerPage = () => {
+      const width = window.innerWidth;
 
-      setCurrentIndex((prev) => {
-        const maxIndex = Math.max(0, totalProducts - Math.floor(perPage));
-        return prev > maxIndex ? maxIndex : prev;
-      });
+      if (width < 640) {
+        setItemsPerPage(1.15);
+      } else if (width < 768) {
+        setItemsPerPage(1);
+      } else if (width < 1024) {
+        setItemsPerPage(2);
+      } else {
+        setItemsPerPage(3);
+      }
     };
 
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [totalProducts]);
+    updateItemsPerPage();
+
+    window.addEventListener("resize", updateItemsPerPage);
+
+    return () => {
+      window.removeEventListener("resize", updateItemsPerPage);
+    };
+  }, []);
+
+  const maxIndex = Math.max(0, totalProducts - Math.floor(itemsPerPage));
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => {
-      const maxIndex = Math.max(0, totalProducts - Math.floor(itemsPerPage));
-      return prev >= maxIndex ? 0 : prev + 1;
-    });
+    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => {
-      const maxIndex = Math.max(0, totalProducts - Math.floor(itemsPerPage));
-      return prev <= 0 ? maxIndex : prev - 1;
-    });
+    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
   };
 
   const onTouchStart = (e: React.TouchEvent) => {
@@ -120,57 +117,57 @@ const ProductPage = () => {
     if (!touchStart || !touchEnd) return;
 
     const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > minSwipeDistance;
-    const isRightSwipe = distance < -minSwipeDistance;
 
-    if (isLeftSwipe) {
+    if (distance > minSwipeDistance) {
       nextSlide();
-    } else if (isRightSwipe) {
+    }
+
+    if (distance < -minSwipeDistance) {
       prevSlide();
     }
   };
 
   useEffect(() => {
-    const timer = setInterval(() => {
+    const interval = setInterval(() => {
       nextSlide();
     }, 5000);
-    return () => clearInterval(timer);
-  }, [itemsPerPage, totalProducts]);
 
-  const maxIndex = Math.max(0, totalProducts - Math.floor(itemsPerPage));
+    return () => clearInterval(interval);
+  }, [itemsPerPage]);
 
   return (
-    <section id="produk" className="py-12 md:py-24 bg-secondary overflow-hidden">
+    <section
+      id="produk"
+      className="py-12 md:py-24 bg-secondary overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 md:mb-12 gap-6">
           <div className="max-w-2xl">
             <h2 className="text-3xl md:text-5xl font-bold text-gray-800 leading-tight">
               Pilihan Desain <span className="text-primary">Kubah Terbaik</span>
             </h2>
+
             <p className="mt-4 text-gray-600 hidden md:block">
-              Kami menyediakan berbagai pilihan jenis dan bentuk kubah dengan material premium untuk keindahan masjid Anda.
+              Kami menyediakan berbagai pilihan jenis dan bentuk kubah dengan
+              material premium untuk keindahan masjid Anda.
             </p>
           </div>
+
           <div className="flex gap-3 md:gap-4 self-end md:self-auto">
             <button
               onClick={prevSlide}
-              className="p-3 md:p-4 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all cursor-pointer group"
+              className="p-3 md:p-4 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition cursor-pointer"
               aria-label="Previous Slide"
             >
-              <FaChevronLeft
-                size={18}
-                className="group-hover:scale-110 transiton-transform"
-              />
+              <FaChevronLeft size={18} />
             </button>
+
             <button
               onClick={nextSlide}
-              className="p-3 md:p-4 rounded-full bg-primary text-white hover:bg-primary/80 transition-all cursor-pointer shadow-lg shadow-primary/40 group"
+              className="p-3 md:p-4 rounded-full bg-primary text-white hover:bg-primary/80 transition cursor-pointer shadow-lg shadow-primary/40"
               aria-label="Next Slide"
             >
-              <FaChevronRight
-                size={18}
-                className="group-hover:scale-110 transiton-transform"
-              />
+              <FaChevronRight size={18} />
             </button>
           </div>
         </div>
@@ -190,7 +187,7 @@ const ProductPage = () => {
             {products.map((product, index) => (
               <div
                 key={index}
-                className="w-full sm:w-1/2 lg:w-1/3 px-2 md:px-3 flex-shrink-0"
+                className="flex-shrink-0 px-2 md:px-3"
                 style={{ width: `${100 / itemsPerPage}%` }}
               >
                 <ProductCard {...product} />
@@ -200,19 +197,18 @@ const ProductPage = () => {
         </div>
 
         <div className="mt-8 md:mt-12 flex justify-center gap-2 md:gap-3">
-          {Array.from({ length: maxIndex + 1 }).map(
-            (_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`h-1.5 md:h-2 rounded-full transition-all duration-300 ${currentIndex === index
-                  ? "w-8 md:w-10 bg-primary"
-                  : "w-1.5 md:w-2 bg-gray-300 hover:bg-primary/40"
-                  }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ),
-          )}
+          {Array.from({ length: maxIndex + 1 }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                currentIndex === index
+                  ? "w-10 bg-primary"
+                  : "w-2 bg-gray-300 hover:bg-primary/40"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>

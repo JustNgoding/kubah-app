@@ -1,5 +1,4 @@
-// src/components/Navbar.tsx
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { IconType } from "react-icons";
 import {
   HiMenuAlt3,
@@ -21,9 +20,8 @@ type NavItem = {
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeHash, setActiveHash] = useState("#home");
+  const [activeHash, setActiveHash] = useState("home");
 
-  // ✅ Hapus useLocation & useNavigate — pakai smooth scroll biasa
   const mainNav: NavItem[] = [
     { label: "Home", path: "home", icon: HiHome },
     { label: "Produk", path: "produk", icon: HiCube },
@@ -35,18 +33,46 @@ const Navbar: React.FC = () => {
     { label: "Kontak Kami", path: "kontak-kami", icon: HiMail },
   ];
 
-  // ✅ Smooth scroll tanpa hash router
   const handleScrollTo = (id: string) => {
-    setActiveHash(id);
     setIsOpen(false);
+    setActiveHash(id);
 
-    if (id === "home") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
+    const element = document.getElementById(id);
 
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    if (!element) return;
+
+    const offset = 100;
+    const top =
+      element.getBoundingClientRect().top + window.pageYOffset - offset;
+
+    window.scrollTo({
+      top,
+      behavior: "smooth",
+    });
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 150;
+
+      for (const item of mainNav) {
+        const section = document.getElementById(item.path);
+
+        if (!section) continue;
+
+        if (
+          scrollPosition >= section.offsetTop &&
+          scrollPosition < section.offsetTop + section.offsetHeight
+        ) {
+          setActiveHash(item.path);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav className="fixed top-0 z-40 w-full bg-primary px-4 py-4 md:py-8 md:px-20">
@@ -58,7 +84,7 @@ const Navbar: React.FC = () => {
         >
           <img
             src="./assets/images/logo/dome_logo.png"
-            alt="Dome Indonesia - Produsen Kubah Masjid Terbaik"
+            alt="Dome Indonesia Produsen Kubah Masjid"
             className="absolute top-[20px] left-0 -translate-y-1/2 h-16 md:h-24 w-auto object-contain drop-shadow-md"
           />
         </button>
@@ -69,7 +95,7 @@ const Navbar: React.FC = () => {
             <li key={item.label}>
               <button
                 onClick={() => handleScrollTo(item.path)}
-                className={`flex items-center gap-2 transition-colors hover:text-blue-300 ${
+                className={`transition-colors hover:text-blue-300 cursor-pointer${
                   activeHash === item.path ? "text-blue-300" : ""
                 }`}
               >
@@ -92,12 +118,13 @@ const Navbar: React.FC = () => {
       {/* Mobile Nav */}
       <div
         className={`lg:hidden overflow-hidden transition-all duration-300 ${
-          isOpen ? "opacity-100" : "max-h-0 opacity-0"
+          isOpen ? "opacity-100 max-h-[400px]" : "max-h-0 opacity-0"
         }`}
       >
         <ul className="flex flex-col gap-4 px-4 py-4 font-semibold text-white">
           {mainNav.map((item) => {
             const Icon = item.icon;
+
             return (
               <li key={item.label}>
                 <button

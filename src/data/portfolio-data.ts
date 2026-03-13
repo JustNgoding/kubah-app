@@ -1,5 +1,6 @@
 export interface PortfolioItem {
     id: number;
+    title: string;
     image: string;
     span: string;
 }
@@ -10,13 +11,14 @@ const generatePortfolioData = (count: number): PortfolioItem[] => {
         let span = "col-span-1";
 
         // Balanced but dynamic grid logic
-        if (id % 12 === 1) span = "md:col-span-2 md:row-span-2"; // Large square
-        else if (id % 12 === 5) span = "md:col-span-2 md:row-span-1"; // Horizontal wide
-        else if (id % 12 === 8) span = "md:row-span-2"; // Vertical tall
-        else if (id % 12 === 10) span = "md:col-span-2"; // Horizontal wide
+        if (id % 12 === 1) span = "md:col-span-2 md:row-span-2";
+        else if (id % 12 === 5) span = "md:col-span-2 md:row-span-1";
+        else if (id % 12 === 8) span = "md:row-span-2";
+        else if (id % 12 === 10) span = "md:col-span-2";
 
         return {
             id,
+            title: `Proyek Kubah Masjid ${id}`,
             image: `./assets/images/portfolio/portfolio${id}.jpeg`,
             span,
         };
