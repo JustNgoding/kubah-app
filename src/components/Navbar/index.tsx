@@ -51,6 +51,7 @@ const Navbar: React.FC = () => {
     });
   };
 
+  // detect active section when scrolling
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 150;
@@ -92,10 +93,10 @@ const Navbar: React.FC = () => {
         {/* Desktop Nav */}
         <ul className="hidden items-center gap-6 font-semibold text-white lg:flex">
           {mainNav.map((item) => (
-            <li key={item.label}>
+            <li key={item.label} className="cursor-pointer">
               <button
                 onClick={() => handleScrollTo(item.path)}
-                className={`transition-colors hover:text-blue-300 cursor-pointer${
+                className={`transition-colors hover:text-blue-300 ${
                   activeHash === item.path ? "text-blue-300" : ""
                 }`}
               >
